@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Repair Scanner</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body style="background-image: url('2.png'); background-size: cover;">
+<div class="container">
+    <div class="banner">
+        <h1>Repair Scanner</h1>
+    </div>
+    <div class="content">
+        <div class="button-container">
+            <div id="userSelection" class="user-selection">
+                <button onclick="showForm('cliente')">User</button>
+                <button onclick="showForm('experto')">Expert</button>
+            </div>
+        </div>
+        <div id="formularioCliente" class="form-container" style="display: none;">
+            <h2>User Form</h2>
+            <form id="clienteForm" onsubmit="enviarSolicitud(event)">
+                <label for="nombre">Name:</label>
+                <input type="text" id="nombre" name="nombre" required><br>
+                <label for="direccion">Location:</label>
+                <input type="text" id="direccion" name="direccion" required><br>
+                <label for="telefono">Phone:</label>
+                <input type="tel" id="telefono" name="telefono" required><br>
+                <label for="marca">Brand:</label>
+                <select id="marca" name="marca" required>
+                    <option value="iOS">iOS</option>
+                    <option value="Android">Android</option>
+                </select><br>
+                <label for="problema">Problem:</label>
+                <select id="problema" name="problema" required>
+                    <option value="Materia">Batery</option>
+                    <option value="Pantalla">Screen</option>
+                </select><br>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+        <div id="formularioExperto" class="form-container" style="display: none;">
+            <h2>Login</h2>
+            <form id="expertoForm">
+                <label for="usuario">Username:</label>
+                <input type="text" id="usuario" name="usuario" required><br>
+                <label for="contrasena">Password:</label>
+                <input type="password" id="contrasena" name="contrasena" required><br>
+                <button type="submit">Login</button>
+            </form>
+            <p>You do not have an account? <a href="#">Create Account</a></p>
+        </div>
+    </div>
+</div>
+<script src="scripts.js"></script>
+</body>
+</html>
